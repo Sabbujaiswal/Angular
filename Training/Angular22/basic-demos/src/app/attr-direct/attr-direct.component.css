@@ -1,0 +1,18 @@
+.one{
+    color: green;
+}
+.two{
+    color: skyblue;
+}
+.three{
+    letter-spacing: 5px;
+}
+.pcolor{
+    color: pink;
+}
+.ocolor{
+    color: orange;
+}
+.tstyle{
+    text-transform: uppercase;
+}

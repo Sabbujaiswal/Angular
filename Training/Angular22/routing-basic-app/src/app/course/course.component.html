@@ -1,0 +1,14 @@
+<h3>List of Courses</h3>
+<ul *ngFor="let course of courses" (click)="onSubmit(course)">
+    <li [ngClass]="{ocolor:course.type=='backend',
+                                        bcolor:course.type=='frontend',
+                                        rcolor:course.type=='testing'}">
+        <!-- <h3>CourseId:{{course.courseId}}</h3> -->
+        <h3>Name:{{course.courseName|uppercase}}</h3>
+        <h3>Type:{{course.type|lowercase}}</h3>
+        <!-- <h3>Cost:{{course.cost|currency:'Rs:'}}</h3>
+        <h3>Medium:{{course.medium|uppercase}}</h3>
+        <h3 *ngIf="course.trainer">Trainer:{{course.trainer|uppercase}}</h3>  -->
+    </li>
+</ul>
+

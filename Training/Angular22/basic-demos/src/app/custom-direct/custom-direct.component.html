@@ -1,0 +1,27 @@
+<h2>Using Custom Attribute Directive</h2>
+<h3 appBasicHighlight="appBasicHighlight">This is a basic highlighter</h3>
+<!-- {{username}} -->
+
+<h3 appRenderHighlight="appRenderHighlight">This is a renderer directive
+</h3>
+<h3 appHostHighlight="appHostHighlight">Using Host Listener to handle event</h3>
+
+<h3 appHostbindHighlight [defaultColor]="'green'" [highlightColor]="'indigo'"  [textStyle]="'uppercase'"
+[bgCOlor]="'pink'">To Provide dynamic values for styling</h3>
+
+
+<h2>Using Custom Structural Directive </h2>
+<!-- if the username is priya this will be printed  -->
+<input type="text" [(ngModel)]='username'>
+<h3 *ngIf="username=='Priya' else temp1">
+    Welcome {{username}}
+</h3>
+<ng-template #temp1>
+    Wrong user...
+</ng-template>
+<!-- if the username is not priya this will be printed -->
+<h3 *appNotif="username=='Priya'">
+    Hello {{username}}
+</h3>
+
+<h3 *appNumberloop='5'> Welcome </h3>

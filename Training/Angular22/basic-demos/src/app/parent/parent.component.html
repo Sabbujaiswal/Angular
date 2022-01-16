@@ -1,0 +1,14 @@
+<div [ngStyle]="{'background-color':'pink'}">
+<h2>Parent Component</h2>
+{{parentMessOne}}<br>
+{{parentMessTwo}}<br>
+Enter name <input type=text  #parentName (keyup)=0>
+<app-child [parentOne]="parentMessOne"
+[parentTwo]="parentMessTwo"
+[parentThree]="parentName.value"
+(childEventOne)="fchild=$event"
+(childEventTwo)="schild=$event"></app-child>
+<h3>Value From child</h3>
+<h3>{{fchild}}</h3>
+<h3>{{schild}}</h3>
+</div>

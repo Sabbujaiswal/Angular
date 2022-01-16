@@ -1,0 +1,9 @@
+<div [ngStyle]="{'background-color':'pink'}">
+<ul *ngFor="let product of cartDetails">
+    <li>
+        <h2>Product Name:{{product.name |uppercase}}</h2>
+        <h2>Total Price:{{product.cost *product.quantity}}</h2>
+    </li>
+</ul>
+
+</div>

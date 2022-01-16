@@ -1,0 +1,8 @@
+li{
+    list-style-type: none;
+    float: left;
+    padding: 15px;
+    border: 10px;
+    border-color:brown;
+    border-style: solid;
+}

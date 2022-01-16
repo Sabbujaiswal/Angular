@@ -1,0 +1,31 @@
+<h2>using ngClass</h2>
+
+<h3 [ngClass]="'one'">Using ngClass as a one String</h3>
+
+<h3 [ngClass]="'one two three '">Using ngClass as a string</h3>
+
+<h3 [ngClass]="['one','two']">Using ngClass as an array</h3>
+
+<h3 [ngClass]="{'one':true,'two':false,'three':true}">Using ngClass as an object</h3>
+
+<!-- original use case -->
+
+<h3 [ngClass]="{'one':username=='Sabbu','two':city=='pune','three':username=='Sri'}">Using ngClass as an object</h3>
+
+
+<h2>using ngFor and ngIf</h2>
+<ul *ngFor="let fruit of fruits">
+    <li [ngClass]="{
+                pcolor:fruit.includes('berry'),
+                ocolor:fruit.includes('o'),
+                three:fruit.includes('pp'),
+                tstyle:fruit.includes('e')}">
+               <h3>{{fruit}}</h3> 
+            </li>
+</ul>
+
+
+<h2>Using ngStyle</h2>
+<h3 [ngStyle]="{'color':'red','letter-spacing':'3px'}">Using ngStyle</h3>
+
+<h3 [ngStyle]="{'color':username=='Sri'?'orange':'blue','letter-spacing':city=='pune'?'5px':'8px'}">Using ngStyle with condition</h3>

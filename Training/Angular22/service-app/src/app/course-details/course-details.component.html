@@ -1,0 +1,18 @@
+Enter Id
+<input type="text" #courseId />
+    <button (click)="showCourse(courseId.value)">Show Details</button>
+    <button (click)="showJSONCourse(courseId.value)">Show Details</button>
+
+    <div *ngIf="ncourse">
+        <h3>Course Details</h3>
+        <li [ngClass]="{ocolor:ncourse.type=='backend',
+                 bcolor:ncourse.type=='frontend',
+                  rcolor:ncourse.type=='testing'}">
+            <h3>CourseId:{{ncourse.courseId}}</h3>
+            <h3>Name:{{ncourse.courseName|uppercase}}</h3>
+            <h3>Type:{{ncourse.type|lowercase}}</h3>
+            <h3>Cost:{{ncourse.cost|currency:'Rs:'}}</h3>
+            <h3>Medium:{{ncourse.medium|uppercase}}</h3>
+            <h3 *ngIf="ncourse.trainer">Trainer:{{ncourse.trainer|uppercase}}</h3>
+        </li>
+    </div>

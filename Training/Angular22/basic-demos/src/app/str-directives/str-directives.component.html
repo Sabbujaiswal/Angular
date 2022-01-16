@@ -1,0 +1,57 @@
+<h2>using ngIf</h2>
+
+<h3 *ngIf="username=='Sabbu'">
+Welcome {{username}}
+</h3>
+
+<h3 *ngIf="username!=='Sabbu' else temp1">
+     {{username}}
+    </h3>
+    <ng-template #temp1>
+<h3>Great job {{username}}</h3>
+
+    </ng-template>
+
+    <h3 *ngIf="username=='Sabbu' then temp2 else temp3"></h3>
+    <ng-template #temp2>   
+        <h3>Congrates {{username}}</h3>
+    </ng-template>
+    <ng-template #temp3>
+        <h3>
+            Better Luck next time{{username}}
+        </h3>
+    </ng-template>
+
+    <h3 *ngIf="username!='Sabbu' else temp3"></h3>
+
+
+
+    <input [(ngModel)]='empname'>
+    <h3 *ngIf="empname=='Sri' else check1 ">Welcome {{empname}}</h3>
+<ng-template #check1>
+Wrong User {{empname}}
+
+</ng-template>
+
+
+<h2>Using ngFor</h2>
+<ul *ngFor="let fruit of fruits">
+    <li [style.list-style-type]='listStyle'>
+        {{fruit.toUpperCase()}}
+    </li>
+</ul>
+
+<h2>using ngFor and ngIf</h2>
+
+<ul *ngFor="let fruit of fruits" [style.list-style-type]='listStyle'>
+<h3 *ngIf="fruit.includes('berry')" [style.color]="'pink'">{{fruit.toUpperCase()}}</h3>
+<h3 *ngIf="fruit.includes('pp')" [style.color]="'red'">{{fruit.toUpperCase()}}</h3>
+<h3 *ngIf="fruit.includes('o')" [style.color]="'orange'">{{fruit.toUpperCase()}}</h3>
+<h3 *ngIf="!fruit.includes('o')&&!fruit.includes('pp')&&!fruit.includes('berry') " [style.color]="'green'">{{fruit.toUpperCase()}}</h3>
+
+</ul>
+
+<!-- if it is having berry -pink color
+if it is has ornage 
+if it has pp then color should be red
+else print in green color -->

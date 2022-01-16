@@ -1,0 +1,41 @@
+[{
+    "courseId":1,
+    "courseName":"Java",
+    "cost":2000,
+    "type":"backend",
+    "medium":"online",
+    "trainer":"Sri"
+    
+},{
+    
+    "courseId":2,
+    "courseName":"Angular",
+    "cost":5000,
+    "type":"frontend",
+    "medium":"offline",
+    "trainer":"Sri"
+},{
+    
+    "courseId":3,
+    "courseName":"Nodejs",
+    "cost":6000,
+    "type":"backend",
+    "medium":"online",
+    "trainer":"Sri"
+},{
+    
+    "courseId":4,
+    "courseName":"React",
+    "cost":12000,
+    "type":"frontend",
+    "medium":"online"
+    
+},{
+    
+    "courseId":5,
+    "courseName":"Cucumber",
+    "cost":2000,
+    "type":"testing",
+    "medium":"online",
+    "trainer":"Sri"
+}]

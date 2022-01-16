@@ -1,0 +1,11 @@
+<div [ngStyle]="{'background-color':'green'}">
+<h2>Child Componet</h2>
+<h3>Value from Parent</h3>
+<h4>{{parentOne}}</h4>
+<h4>{{parentTwo}}</h4>
+<h4>{{parentThree}}</h4>
+
+Enter Child Name<input type="text" #childName>
+<button (click)=showMessage()>Show Message</button>
+<button (click)=greetChild(childName.value)>Greet Message</button>
+</div>

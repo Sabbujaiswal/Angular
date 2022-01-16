@@ -1,0 +1,28 @@
+Select Property
+<select [(ngModel)]="propertyName">
+    <option value="name">Name</option>
+    <option value="brand">Brand</option>
+    <option value="category">Category</option>
+
+</select>
+Enter Choice
+<input type='text' [(ngModel)]="choice">
+
+    <h2>Product Details</h2>
+    <ul *ngFor="let product of products|filter:propertyName:choice">
+        <li [ngClass]="{rcolor:product.category=='electronics',bcolor:product.category=='gadgets',
+                                      dcolor:product.category=='groceries'}">
+            <h2>{{product.name|uppercase}}</h2>
+            <h2>{{product.brand|titlecase}}</h2>
+            <h2>{{product.cost|currency:'Rs:'}}</h2>
+            <h2>{{product.quantity|number}}</h2>
+            <h2>{{product.category}}</h2>
+            <h2 *ngIf="product.rating">{{product.rating|number}}</h2>
+            <h2 *ngIf="product.expiry">{{product.expiry|date}}</h2>
+
+            <button (click)="addToCart(product)">Add to Cart</button>
+        </li>
+    </ul>
+
+    <!-- child componet -->
+    <app-cart [cartDetails]="productsInCart"></app-cart>

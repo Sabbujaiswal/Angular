@@ -1,0 +1,36 @@
+<h2>Using inbuilt Pipe</h2>
+<h3>
+{{employee.name|uppercase}}<br>
+{{employee.salary|currency}}<br>
+{{employee.salary|currency:'Rs:'}}<br>
+{{employee.city|lowercase}}<br>
+{{message|titlecase}}<br>
+
+<!-- {minIntegerDigits}.{minFraactionDigits}-{maxFractionalDigits} -->
+{{employee.bonus|number:'1.0-2'}}<br><br>
+<br>
+{{employee.birthday|date}}<br>    
+{{employee.birthday|date:'shortDate'}}<br>
+{{employee.birthday|date:'mediumDate'}}<br>
+{{employee.birthday|date:'fullDate'}}<br>
+{{employee.birthday|date:'short'}}<br>
+{{employee.birthday|date:'medium'}}<br>
+{{employee.birthday|date:'shortTime'}}<br>
+<br><br>
+{{employee|json}}
+</h3>
+
+<!-- print course name in uppercase,type in lowercase,cost in currency,trainer in uppercase -->
+
+<ul *ngFor = "let course of courses ">
+   <li [ngClass]="{ocolor:course.type=='backend',
+   bcolor:course.type=='frontend',
+   rcolor:course.type=='testing'}">
+<h3>Name:{{course.courseName|uppercase}}</h3>
+<h3>Type:{{course.type|lowercase}}</h3>
+<h3>Cost:{{course.cost|currency:'Rs:'}}</h3>
+<h3>Medium:{{course.medium|lowercase}}</h3>
+<h3 *ngIf="course.trainer">Trainer:{{course.trainer|uppercase}}</h3>
+
+</li>
+    </ul>

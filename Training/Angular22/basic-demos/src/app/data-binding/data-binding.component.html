@@ -1,0 +1,35 @@
+<!-- Interpolation
+ Welcome {{username}}<br>
+Hello {{employee.name}} from {{employee.city}}<br>
+<h2>Property Binding</h2>
+<img [src]="mylogo" height="100px" width ="100px">
+<img src='{{mylogo}}' height="100px" width ="100px">
+<img bind-src="mylogo" height="100px" width ="100px"><br>
+<button [disabled]="!isDisable">View more</button> 
+
+<h2>Event Binding</h2>
+<strong> {{message}}</strong><br>
+<button (click)=showMessage()>showMessage</button><br>
+<button (click)=changeMess()>changeMess</button><br> 
+
+<h2>Class Binding</h2>
+<h3 [class]='myclass'>This is a class Binding</h3>
+<h3 [class.footer]='applyClass'>Using a boolean for class Binding</h3>
+<h3 [class]='newclass'>Checking Class Binding</h3>
+ <h3 [class]='applyClass ? newclass : myclass' >Checking class Binding</h3>
+
+<h2>Style Binding</h2>
+<h3 [style.color]='headerColor'>Using style Binding</h3>
+<h3 [style.textTransform]='headerText'>Using style Binding</h3>
+<h3 [style.color]='footerColor'>Using style Binding</h3>
+<h3 [style.color]='applyStyle ? headerColor : footerColor'>Using Boolean value with style Binding</h3> --> 
+
+
+<!-- <h2>Two Way data Binding using NgModel</h2>
+<input [(ngModel)]="studentname">{{studentname}}
+
+
+<h2>Template Reference Variable </h2>
+<input type="text" #uname>
+<button (click)="greet(uname.value)">GreetUser</button>
+{{greetmessage}} --> 

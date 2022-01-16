@@ -1,0 +1,53 @@
+<h2>Using custom pipes</h2>
+<h3>{{message|design|uppercase}}</h3>
+<h3>{{message|design:'*'}}</h3>
+<h3>{{message|design:'...'}}</h3>
+
+<h3>{{username |titles:'f'}}</h3>
+<br>
+
+    <h3>{{'Sabbu'|titles:'m'}}</h3>
+    <h3>{{'Sabbu'|titles|uppercase}}</h3>
+
+
+    <h3>{{birthday|date}}</h3>
+
+    <h3>{{birthday|time:'h'}}</h3>
+    <h3>{{birthday|time:'m'}}</h3>
+    <h3>{{birthday|time:'s'}}</h3>
+    <h3>{{birthday|time:'d'}}</h3>
+    <h3>{{birthday|time:'mm'}}</h3>
+    <h3>{{birthday|time:'y'}}</h3>
+    <h3>{{birthday|time:'dd'}}</h3>
+    <h3>{{birthday|time:'t'}}</h3>
+
+
+    <h3>{{'Priya'|reverse}}</h3>
+
+
+    <!-- Enter Property <input type="text" [(ngModel)] ="propertyName">
+       Enter Choice <input type="text" [(ngModel)] ="choice"> -->
+
+    <!-- By drop down  -->
+   
+    Enter Property
+    <select [(ngModel)]='propertyName'>
+        <option value="cousreName" [style.color]="'green'">Cousre Name</option>
+        <option value="type" [style.color]="'red'">Type</option>
+        <option value="cost" [style.color]="'yellow'">Cost</option>
+        <option value="trainer" [style.color]="'grey'">Trainer</option>
+    </select>
+    Enter Choice
+    <input type='text' [(ngModel)]="choice">
+
+        <ul *ngFor="let course of courses|filter:propertyName:choice">
+            <li [ngClass]="{ocolor:course.type=='backend',
+                            bcolor:course.type=='frontend',
+                            rcolor:course.type=='testing'}">
+                <h3>Name:{{course.courseName|uppercase}}</h3>
+                <h3>Type:{{course.type|lowercase}}</h3>
+                <h3>Cost:{{course.cost|currency:'Rs:'}}</h3>
+                <h3>Medium:{{course.medium|uppercase}}</h3>
+                <h3 *ngIf="course.trainer">Trainer:{{course.trainer|uppercase}}</h3>
+            </li>
+        </ul>
